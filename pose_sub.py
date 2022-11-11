@@ -35,7 +35,7 @@ def hand_count(camera):
             cv2.imshow('live video',image)
             cv2.waitKey(10)
             mp_drawing.draw_landmarks(image,results.pose_landmarks,mp_pose.POSE_CONNECTIONS,landmark_drawing_spec=mp_drawing_styles.get_default_pose_landmarks_style())
-        if count>10:
-                camera.release()
+            image=cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
+        if count>=10:
                 print('your tast completed...')
     return(image,count)
